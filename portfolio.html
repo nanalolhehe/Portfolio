@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anais Ziane - Web/App Developer</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+
+    a:hover {
+      color: #2980b9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Home Section */
+    #home {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #2c3e50;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    #home p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      animation: slideIn 1.2s ease-in-out;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* About Me Section */
+    #about {
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      padding: 60px 0;
+      color: #2c3e50;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    #about p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Skills Section */
+    #skills {
+      padding: 60px 0;
+      background-color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .skill {
+      padding: 20px;
+      background-color: #ecf0f1;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    /* Education Section */
+    #education {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+      color: #2c3e50;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Projects Section */
+    #projects {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      color: #2c3e50;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      color: #2c3e50;
+    }
+
+    .project p {
+      color: #333;
+    }
+
+    /* Certifications Section */
+    #certifications {
+      padding: 60px 0;
+      background-color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .cert {
+      padding: 20px;
+      background-color: #ecf0f1;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cert:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cert img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      color: #2c3e50;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: #2fb3d7;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #2980b9;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .social-links img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Home Section -->
+  <section id="home">
+    <div class="container">
+      <img src="https://i.ibb.co/DHz2jxmn/imresizer-1740276179442.jpg" alt="Anais Ziane" class="profile-pic">
+      <h1>Anais Ziane</h1>
+      <p>Web & App Developer | Creative Problem Solver</p>
+      <a href="#projects" class="btn">View My Work</a>
+      <a href="https://www.dropbox.com/scl/fi/bou9upqgbikgdliwdtom3/cv.pdf?rlkey=j8stovra6p6viugi89zriygwi&st=d8cynsh8&dl=0" class="btn" target="_blank">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hi! I'm Anais, a passionate web and app developer with expertise in building interactive, user-friendly, and scalable applications. I specialize in frontend and backend development, and I'm always eager to learn new technologies. When I'm not coding, you can find me playing with cats or exploring new creative projects.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968267.png" alt="HTML"> HTML</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968242.png" alt="CSS"> CSS</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" alt="JavaScript"> JavaScript</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/753/753244.png" alt="React"> React</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968322.png" alt="Node.js"> Node.js</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/3098/3098090.png" alt="Python"> Python</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968342.png" alt="MongoDB"> MongoDB</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968381.png" alt="Firebase"> Firebase</div>
+        <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968705.png" alt="Git"> Git</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <p><strong>Bachelor of Engineering in Computer Science</strong></p>
+      <p>University of Bejaia, Algeria</p>
+      <p>Expected Graduation: 2029</p>
+      <p><strong>Key Courses:</strong> Algorithms, Data Structures, Web Development, Mobile App Development, Database Systems, Software Engineering</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Interactive Resume -->
+        <div class="project">
+          <img src="https://i.pinimg.com/474x/3b/9d/74/3b9d742c4be19f7a20f387a92a3b0779.jpg" alt="Interactive Resume">
+          <h3>Interactive Resume</h3>
+          <p>A playful, interactive resume featuring a cat and black hole game.</p>
+          <a href="https://bronze-correna-57.tiiny.site" class="btn" target="_blank">Play Game</a>
+        </div>
+        <!-- Matcha's Favorite Flower -->
+        <div class="project">
+          <img src="https://i.pinimg.com/474x/5f/3f/d5/5f3fd503ff61f0b9171b20a2ea90091c.jpg" alt="Matcha's Favorite Flower">
+          <h3>Matcha's Favorite Flower</h3>
+          <p>A fun game where users guess Matcha's favorite flower.</p>
+          <a href="https://teal-trudy-90.tiiny.site" class="btn" target="_blank">Play Game</a>
+        </div>
+        <!-- Memory Card Game -->
+        <div class="project">
+          <img src="https://i.pinimg.com/474x/55/92/d5/5592d54e926d5bb1252aae8657ed6805.jpg" alt="Memory Card Game">
+          <h3>Memory Card Game</h3>
+          <p>Test your memory by matching pairs of cards.</p>
+          <a href="https://azure-donia-2.tiiny.site" class="btn" target="_blank">Play Game</a>
+        </div>
+        <!-- Café Website -->
+        <div class="project">
+          <img src="https://i.pinimg.com/474x/6c/1e/35/6c1e35d59732b51edb484f5810651023.jpg" alt="Café Website">
+          <h3>Café Website</h3>
+          <p>A professional website for a café.</p>
+          <a href="https://coffee-laure-64.tiiny.site" class="btn" target="_blank">Visit Website</a>
+        </div>
+        <!-- Color Guessing Game -->
+        <div class="project">
+          <img src="https://i.pinimg.com/474x/69/e8/c1/69e8c12c79bb9f81845615c08271b793.jpg" alt="Color Guessing Game">
+          <h3>Color Guessing Game</h3>
+          <p>Guess the correct color based on RGB values.</p>
+          <a href="https://emerald-katina-70.tiiny.site" class="btn" target="_blank">Play Game</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
+      <div class="certs-grid">
+        <!-- Web Development -->
+        <div class="cert">
+          <a href="https://cursa.app/en/my-certificate/cert3efacba5edbde7eac570a6bc8502a9b1" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968509.png" alt="Web Development Certification">
+            <p>Web Development</p>
+          </a>
+        </div>
+        <!-- Python -->
+        <div class="cert">
+          <a href="https://cursa.app/en/my-certificate/cert602e75243c7f9c9f1304cf51ca94c4cb" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" alt="Python Certification">
+            <p>Python</p>
+          </a>
+        </div>
+        <!-- Office Informatics & Computer Skills -->
+        <div class="cert">
+          <a href="https://www.dropbox.com/scl/fi/mb6dl2hct61dz926dr0sg/certificate.pdf?rlkey=u5w3ckp330l76g8tsohu8qmmq&st=c8pt057w&dl=0" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/1804/1804227.png" alt="Office Informatics Certification">
+            <p>Office Informatics</p>
+          </a>
+        </div>
+        <!-- English Proficiency -->
+        <div class="cert">
+          <a href="https://cert.efset.org/de/GBZBhP" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/1804/1804227.png" alt="English Proficiency">
+            <p>English Proficiency</p>
+          </a>
+        </div>
+        <!-- German Proficiency -->
+        <div class="cert">
+          <a href="https://www.dropbox.com/scl/fi/jcnvesckhsds8uh8jfy4n/Sprachtest-Certificate-Deutsch-Anais-Ziane-1.pdf?rlkey=2o7gmurbrlandqm6nmijm38in&st=dj8icxoi&dl=0" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/1804/1804227.png" alt="German Proficiency">
+            <p>German Proficiency</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mwployye" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/anais-ziane-77163231a/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt="LinkedIn"></a>
+        <a href="https://github.com/nanalolhehe" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733609.png" alt="GitHub"></a>
+        <a href="mailto:anaiszianedz@gmail.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/2099/2099199.png" alt="Email"></a>
+        <a href="https://wa.me/213554152496" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp"></a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript for interactivity (if needed)
+  </script>
+</body>
+</html>
